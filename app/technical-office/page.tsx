@@ -191,24 +191,15 @@ export default function TechnicalOfficePage() {
                 </div>
 
                 {/* Clients Section */}
-                <div className="p-6 bg-gradient-to-b from-card to-card/80 space-y-3">
-                  {/* زر الدخول للمنطقة */}
-                  <Button
-                    onClick={() => router.push(`/technical-office/login?area=${area.id}`)}
-                    className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-xl transition-all font-bold shadow-lg hover:shadow-xl hover:scale-105 duration-300 h-auto"
-                  >
-                    <FolderOpen className="w-6 h-6" />
-                    <span className="text-lg">الدخول إلى ملفات المنطقة</span>
-                  </Button>
-
-                  {/* زر Google Drive */}
+<div className="p-6 bg-gradient-to-b from-card to-card/80">
+                  {/* زر فتح Google Drive مباشرة */}
                   {area.driveLink && (
                     <Button
                       onClick={() => window.open(area.driveLink, '_blank')}
                       className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl transition-all font-bold shadow-lg hover:shadow-xl hover:scale-105 duration-300 h-auto"
                     >
                       <FileText className="w-6 h-6" />
-                      <span className="text-lg">فتح ملفات Google Drive</span>
+                      <span className="text-lg">فتح ملفات العملاء</span>
                     </Button>
                   )}
                 </div>
