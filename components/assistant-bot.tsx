@@ -44,10 +44,12 @@ const employeesData = [
   { name: "فاطمه راضي", position: "سكرتاريه", phone: "01155402956", department: "الإدارة العامة" },
   
   // مديرين البنود
-  { name: "محمود عبد الغني", position: "مدير قسم الجبسن بورد والرخام", phone: "01278861380", department: "مديرين البنود" },
-  { name: "محمد شوقي", position: "مدير قسم النجارة", phone: "01282593311", department: "النجارة" },
-  { name: "محمد نجيب", position: "مدير بند الكهرباء", phone: "01114726955", department: "الكهرباء" },
-  { name: "أحمد عبد الباسط", position: "مدير بند السيراميك", phone: "01115706597", department: "السيراميك" },
+  { name: "م/ محمود عبد الغني (أفندينا)", position: "مدير قسم الجبسن بورد والرخام", phone: "01278861380", department: "مديرين البنود" },
+  { name: "م/ محمد شوقي", position: "مدير قسم النجارة", phone: "01282593311", department: "النجارة" },
+  { name: "م/ محمد نجيب", position: "مدير بند الكهرباء", phone: "01114726955", department: "الكهرباء" },
+  { name: "م/ أحمد عبد الباسط", position: "مدير بند السيراميك", phone: "01115706597", department: "السيراميك" },
+  { name: "م/ محمد يوسف", position: "مدير بند التكيفات والتوريدات", phone: "01XXXXXXXXX", department: "التكيفات والتوريدات" },
+  { name: "م/ أحمد عبد الغني", position: "مدير بند توريدات الكهرباء", phone: "01XXXXXXXXX", department: "توريدات الكهرباء" },
   
   // الموارد البشرية
   { name: "محمد عبد المنعم", position: "مدير الموارد البشرية", phone: "01110800543", department: "الموارد البشرية" },
@@ -158,6 +160,15 @@ const employeesData = [
   { name: "محمود علاء", position: "سوشيال", phone: "01120010618", department: "السوشيال ميديا" },
   { name: "عمر عبدين", position: "مطور الذكاء الاصطناعي", phone: "01030435987", department: "السوشيال ميديا" },
   { name: "مؤمن مصطفى", position: "سوشيال", phone: "01122587005", department: "السوشيال ميديا" },
+  
+  // السيارات
+  { name: "عزام", position: "مسؤول السيارات", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة العاصمة الإدارية", position: "سيارة - العاصمة الإدارية", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة القاهرة الجديدة", position: "سيارة - القاهرة الجديدة", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة التجمع الخامس", position: "سيارة - التجمع الخامس", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة وسط", position: "سيارة - وسط", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة أكتوبر", position: "سيارة - أكتوبر", phone: "01XXXXXXXXX", department: "السيارات" },
+  { name: "سيارة الأقاليم", position: "سيارة - الأقاليم", phone: "01XXXXXXXXX", department: "السيارات" },
 ]
 
 // الباقات

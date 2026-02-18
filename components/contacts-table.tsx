@@ -6,7 +6,7 @@ import {
   Briefcase, UserCog, Package, Wrench, Calculator, Hammer, 
   Lightbulb, Palette, FileText, Headphones, Sofa, FileSignature,
   TrendingUp, PhoneCall, Layers, Cog, Coffee, Zap, 
-  Sparkles, Share2, Building2, Home, ClipboardList
+  Sparkles, Share2, Building2, Home, ClipboardList, Car
 } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -66,6 +66,7 @@ function getDepartmentIcon(departmentId: string) {
     "marble-showroom": Sparkles,
     "it": Lightbulb,
     "social-media": Share2,
+    "vehicles": Car,
   }
   
   return iconMap[departmentId] || Home
@@ -96,7 +97,8 @@ function getDepartmentImage(departmentId: string) {
     "social-media": "/images/social-media.png",
     "technical-office": "/images/technical-office.png",
     "telesales": "/images/telesales.png",
-    "warehouse": "/images/warehouse.png",
+    "warehouse": "/images/warehouse (2).png",
+    "vehicles": "/images/Car.png",
   }
   
   return imageMap[departmentId] || null
@@ -130,6 +132,7 @@ function getDepartmentColor(departmentId: string) {
     "marble-showroom": "text-purple-500",
     "it": "text-blue-500",
     "social-media": "text-pink-500",
+    "vehicles": "text-red-500",
   }
   
   return colorMap[departmentId] || "text-primary"
@@ -183,27 +186,39 @@ const departmentsData: Department[] = [
     manager: null,
     team: [
       {
-        name: "محمود عبد الغني",
+        name: "م/ محمود عبد الغني (أفندينا)",
         position: "مدير قسم الجبسن بورد والرخام",
         phone: "1278861380",
       },
       {
-        name: "محمد شوقي",
+        name: "م/ محمد شوقي",
         position: "مدير قسم النجارة",
         phone: "1282593311",
         image: "/images/mohamed-shawky-manager.jpeg",
       },
       {
-        name: "محمد نجيب",
+        name: "م/ محمد نجيب",
         position: "مدير بند الكهرباء",
         phone: "1114726955",
         image: "/images/mohamed-naguib.jpeg",
       },
       {
-        name: "أحمد عبد الباسط",
+        name: "م/ أحمد عبد الباسط",
         position: "مدير بند السيراميك",
         phone: "1115706597",
         image: "/images/ahmed-abdelbaset.jpeg",
+      },
+      {
+        name: "م/ محمد يوسف",
+        position: "مدير بند التكيفات والتوريدات",
+        phone: "1XXXXXXXXX",
+        image: "/images/placeholder.jpg",
+      },
+      {
+        name: "م/ أحمد عبد الغني",
+        position: "مدير بند توريدات الكهرباء",
+        phone: "1XXXXXXXXX",
+        image: "/images/placeholder.jpg",
       },
     ],
   },
@@ -510,12 +525,6 @@ const departmentsData: Department[] = [
         image: "/images/مصطفي كمال (القاهره الجديده).jpeg",
       },
       {
-        name: "محمد عبدالعال",
-        position: "مهندس - القاهرة الجديدة",
-        phone: "1271333509",
-        image: "/images/محمد  عبدالعال.jpeg",
-      },
-      {
         name: "مصطفي عيد",
         position: "مهندس - القاهرة الجديدة",
         phone: "1044498820",
@@ -537,13 +546,14 @@ const departmentsData: Department[] = [
         name: "عبدالرحمن محمد",
         position: "مهندس - القاهرة الجديدة",
         phone: "1090159043",
-        image: "/images/عبدالرحمن العراقي.jpeg",
+        image: "/images/عبدالرحمن محمد.jpeg",
       },
       // منطقة العاصمة
       {
         name: "احمد العزبي",
         position: "مهندس - العاصمة الإدارية",
         phone: "1000273742",
+        image: "/images/احمد العزبي.jpeg",
       },
       {
         name: "حسين فيض الله",
@@ -555,12 +565,13 @@ const departmentsData: Department[] = [
         name: "محمد اشرف",
         position: "مهندس - العاصمة الإدارية",
         phone: "1124492117",
+        image: "/images/محمد اشرف.jpeg",
       },
       {
         name: "محمود محسن",
         position: "مهندس - العاصمة الإدارية",
         phone: "1022640037",
-        image: "/images/محمود اسماعيل.jpeg",
+        image: "/images/محمود محسن.jpeg",
       },
       {
         name: "محمد ماهر",
@@ -609,7 +620,7 @@ const departmentsData: Department[] = [
         name: "محمد غنام",
         position: "مهندس - التجمع الخامس",
         phone: "1200003089",
-        image: "/images/محمد جمال (المستقبل).jpeg",
+        image: "/images/محمد غنام.jpeg",
       },
       // منطقة وسط
       {
@@ -686,31 +697,23 @@ const departmentsData: Department[] = [
         image: "/images/محمد عبدالعظيم.jpeg",
       },
       {
-        name: "بلال",
-        position: "مهندس - الأقاليم",
-        phone: "1119351520",
-        image: "/images/بلال - اقاليم.jpeg",
-      },
-      {
-        name: "اسلام حسبو",
-        position: "مهندس - الأقاليم",
-        phone: "1091836275",
-      },
-      {
         name: "محمود ابو زيد",
         position: "مهندس - الأقاليم",
         phone: "1140479394",
+        image: "/images/محمود ابو زيد.jpeg",
       },
       // الجودة
       {
         name: "محمود اسماعيل",
         position: "مهندس جودة",
         phone: "1113121549",
+        image: "/images/محمود اسماعيل.jpeg",
       },
       {
         name: "شادي مظهر",
         position: "مهندس جودة",
         phone: "1156704637",
+        image: "/images/شادي.jpeg",
       },
     ],
   },
@@ -1193,7 +1196,7 @@ const departmentsData: Department[] = [
     id: "marble-showroom",
     name: "معرض الرخام والجبسن بورد",
     manager: {
-      name: "محمود عبد الغني",
+      name: "م/ محمود عبد الغني (أفندينا)",
       position: "مدير قسم الرخام والجبسن بورد",
       phone: "1278861380",
     },
@@ -1213,6 +1216,48 @@ const departmentsData: Department[] = [
         name: "م/ ايهاب حمدي احمد محمد",
         position: "مهندس IT",
         phone: "0000000000",
+      },
+    ],
+  },
+  {
+    id: "vehicles",
+    name: "السيارات",
+    manager: {
+      name: "عزام",
+      position: "مسؤول السيارات",
+      phone: "01XXXXXXXXX",
+      image: "/images/placeholder.jpg",
+    },
+    team: [
+      {
+        name: "سيارة العاصمة الإدارية",
+        position: "سيارة - العاصمة الإدارية",
+        phone: "01XXXXXXXXX",
+      },
+      {
+        name: "سيارة القاهرة الجديدة",
+        position: "سيارة - القاهرة الجديدة",
+        phone: "01XXXXXXXXX",
+      },
+      {
+        name: "سيارة التجمع الخامس",
+        position: "سيارة - التجمع الخامس",
+        phone: "01XXXXXXXXX",
+      },
+      {
+        name: "سيارة وسط",
+        position: "سيارة - وسط",
+        phone: "01XXXXXXXXX",
+      },
+      {
+        name: "سيارة أكتوبر",
+        position: "سيارة - أكتوبر",
+        phone: "01XXXXXXXXX",
+      },
+      {
+        name: "سيارة الأقاليم",
+        position: "سيارة - الأقاليم",
+        phone: "01XXXXXXXXX",
       },
     ],
   },
@@ -1240,11 +1285,6 @@ function ExecutiveFlipCard() {
               sizes="600px"
               priority
             />
-            <div className="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-4 py-2 shadow-lg">
-              <p className="text-sm text-muted-foreground animate-bounce">
-                ⬅️ حرك الماوس لرؤية التفاصيل
-              </p>
-            </div>
           </div>
         </Card>
 

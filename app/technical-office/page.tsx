@@ -92,8 +92,8 @@ export default function TechnicalOfficePage() {
   useEffect(() => {
     const fetchClientCounts = async () => {
       try {
-        // Fetch all clients from folders
-        const response = await fetch('/api/clients-from-folders')
+        // Fetch all clients from Google Drive
+        const response = await fetch('/api/drive-clients')
         if (response.ok) {
           const data = await response.json()
           if (data.success && data.clients) {
@@ -105,16 +105,51 @@ export default function TechnicalOfficePage() {
               if (!clientsByArea[client.areaId]) {
                 clientsByArea[client.areaId] = []
               }
-              clientsByArea[client.areaId].push(client)
+              clientsByArea[client.areaId].push({
+                id: client.id,
+                name: client.name,
+                code: client.code,
+                areaId: client.areaId,
+                filesCount: client.filesCount || 0
+              })
             })
 
-            // Update areas with real counts and clients - KEEP driveLink
+            // Update areas with real counts from Drive
             setAreas(prev => prev.map(area => ({
               ...area,
               clients: clientsByArea[area.id] || [],
               clientsCount: (clientsByArea[area.id] || []).length,
               driveLink: area.driveLink // Keep the original driveLink
             })))
+          }
+        } else {
+          console.error('Failed to fetch from Drive, falling back to database')
+          // Fallback to database if Drive API fails
+          const dbResponse = await fetch('/api/clients')
+          if (dbResponse.ok) {
+            const dbData = await dbResponse.json()
+            if (dbData.success && dbData.clients) {
+              const allClients = dbData.clients
+              const clientsByArea: Record<number, Client[]> = {}
+              allClients.forEach((client: any) => {
+                if (!clientsByArea[client.areaId]) {
+                  clientsByArea[client.areaId] = []
+                }
+                clientsByArea[client.areaId].push({
+                  id: client.id,
+                  name: client.name,
+                  code: client.code,
+                  areaId: client.areaId,
+                  filesCount: client.filesCount || 0
+                })
+              })
+              setAreas(prev => prev.map(area => ({
+                ...area,
+                clients: clientsByArea[area.id] || [],
+                clientsCount: (clientsByArea[area.id] || []).length,
+                driveLink: area.driveLink
+              })))
+            }
           }
         }
       } catch (error) {
